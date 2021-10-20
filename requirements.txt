@@ -5,6 +5,7 @@ django-environ
 django-ckeditor
 django-jazzmin
 mysqlclient
+pymemcache
 python-slugify
 gunicorn
 Pillow
