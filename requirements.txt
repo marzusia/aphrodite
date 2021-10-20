@@ -1,0 +1,10 @@
+wheel
+django
+django-admin
+django-environ
+django-ckeditor
+django-jazzmin
+mysqlclient
+python-slugify
+gunicorn
+Pillow

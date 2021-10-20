@@ -1,0 +1,289 @@
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;700&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Work Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    padding: 0;
+    margin: 0;
+}
+
+h1, h2, h3, h4, h5, p {
+    padding: 0;
+    margin: 0;
+}
+
+.au-body {
+    min-height: 100vh;
+    display: flex;
+    flex-flow: column nowrap;
+}
+
+.au-header {
+    flex-shrink: 1;
+    background: #422b37;
+    display: flex;
+    flex-flow: row;
+    padding: 1.5rem 3rem 0 3rem;
+}
+
+.au-logo {
+    color: #ffffff;
+    font-weight: 700;
+    margin: .5rem 0 0 0;
+    font-size: 24px;
+    text-decoration: none;
+    outline: none;
+}
+
+.au-menu {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: flex-end;
+    margin-left: auto;
+}
+
+.au-menu-upper {
+    margin-bottom: 2rem;
+}
+
+.au-menu-lower {
+    padding-right: 1rem;
+}
+
+.au-menu-upper > ul,
+.au-menu-lower > ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+}
+
+.au-menu-upper > ul > li {
+    margin: 0 .8rem;
+}
+
+.au-menu-lower > ul > li {
+    margin: 0 1rem;
+}
+
+.au-menu-upper > ul > li > a,
+.au-menu-lower > ul > li > a {
+    display: block;
+    color: #e7d3d9;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.au-menu-lower > ul > li > a {
+    padding: .7rem .8rem .8rem .8rem;
+    border-bottom: 4px solid #422b37;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    color: #ffffff;
+}
+
+.au-menu-lower > ul > li:hover > a {
+    background: #975768;
+}
+
+.au-menu-lower > ul > li > .au-menu-submenu {
+    display: none;
+    background: #f0dae0;
+    position: absolute;
+    left: 0;
+    margin-top: -4px;
+    border-top: 4px solid #975768;
+    width: 100vw;
+    border-bottom-right-radius: 4px;
+    border-bottom-left-radius: 4px;
+}
+
+.au-menu-lower > ul > li:hover > .au-menu-submenu {
+    display: block;
+}
+
+.au-menu-lower > ul > li > .au-menu-submenu .au-menu-submenu-container {
+    display: flex;
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 2.3rem 0 2rem 0;
+    flex-flow: row wrap;
+}
+
+.au-menu-lower > ul > li > .au-menu-submenu .au-menu-submenu-container .au-menu-submenu-section {
+    margin: 0 1rem;
+}
+
+.au-menu-lower > ul > li > .au-menu-submenu .au-menu-submenu-container .au-menu-submenu-section:not(:first-child) {
+    border-left: 1px solid #e4c7cf;
+    padding-left: 1.5rem;
+}
+
+.au-menu-lower > ul > li > .au-menu-submenu .au-menu-submenu-container h2 {
+    margin-bottom: .8rem;
+    font-size: 22px;
+    color: #4b2a3c;
+}
+
+.au-menu-lower > ul > li > .au-menu-submenu .au-menu-submenu-container ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.au-menu-lower > ul > li > .au-menu-submenu .au-menu-submenu-container ul li {
+    margin: .4rem 0;
+}
+
+.au-menu-lower > ul > li > .au-menu-submenu .au-menu-submenu-container ul li a {
+    color: #502a34;
+    text-decoration: underline;
+}
+
+.au-menu-lower > ul > li > .au-menu-submenu .au-menu-submenu-container ul li a:hover {
+    color: #7c576b;
+}
+
+.au-menu-upper > ul > li > a:hover,
+.au-menu-lower > ul > li > a:hover {
+    color: #ffffff;
+}
+
+.au-menu-upper > ul > li > a.arrow::after,
+.au-menu-lower > ul > li > a.arrow::after {
+    content: '▼';
+    font-size: 55%;
+    margin-left: .9em;
+    vertical-align: 2px;
+}
+
+.au-menu-upper-search .au-menu-upper-search-elem {
+    display: flex;
+    flex-flow: row nowrap;
+}
+
+.au-menu-upper-search .au-menu-upper-search-elem input {
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+    padding: .5rem .8rem;
+    border: none;
+    outline: none;
+    font-family: 'Work Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    background: #d49fad;
+    transition: background .2s ease-in-out;
+}
+
+.au-menu-upper-search .au-menu-upper-search-elem input:focus {
+    background: #ffffff;
+}
+
+.au-menu-upper-search .au-menu-upper-search-elem input::placeholder {
+    color: #411f28;
+}
+
+.au-menu-upper-search .au-menu-upper-search-elem a {
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+    text-align: center;
+    background: #975768;
+    padding: 0 .5rem;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+}
+
+.au-menu-upper-search .au-menu-upper-search-elem a img {
+    max-width: 16px;
+    padding-bottom: 2px;
+}
+
+.au-content {
+    flex-grow: 1;
+}
+
+.au-footer {
+    flex-shrink: 1;
+    background: #a56d7c;
+    padding: 2rem 1rem 1.6rem 1rem;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+}
+
+.au-footer .au-footer-section {
+    margin: 0 1.5rem;
+}
+
+.au-footer .au-footer-section h2 {
+    color: #ffffff;
+    margin-bottom: .8rem;
+}
+
+.au-footer .au-footer-section ul {
+    margin: 0;
+    padding: 0 0 0 .8rem;
+    list-style-type: none;
+}
+
+.au-footer .au-footer-section ul li {
+    margin: .6rem 0;
+    color: #faebef;
+}
+
+.au-footer .au-footer-section ul li a {
+    color: #ebc7d1;
+    text-decoration: none;
+}
+
+.au-footer .au-footer-section ul li a:hover {
+    color: #dbb1bd;
+}
+
+.au-footer-bottom {
+    flex-shrink: 1;
+    background: #975768;
+    color: #ffffff;
+    font-size: small;
+    padding: 1.5rem 1rem;
+    text-align: center;
+}
+
+.navbar-brand {
+    font-weight: 700;
+    letter-spacing: -.05em;
+}
+
+.au-navbar {
+    border-top: 8px solid #2E1F27;
+}
+
+.au-content-page .au-content-banner-image img {
+    width: 100%;
+    max-height: 396px;
+}
+
+.au-content-page .au-content-page-header {
+    margin: 0;
+}
+.au-content-page .au-content-page-subheader {
+    display: block;
+    color: #666666;
+    font-size: 115%;
+    font-style: italic;
+    margin: .4rem 0 0 0;
+}
+
+.au-content-page .au-content-wrap {
+    max-width: 768px;
+    padding: 2.3rem 1rem 4rem 1rem;
+    margin: 0 auto;
+}
+
+.au-content-page .au-content-block {
+    margin-top: 1rem;
+}

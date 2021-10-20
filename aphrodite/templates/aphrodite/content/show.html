@@ -1,0 +1,23 @@
+{% extends 'aphrodite/base/base.html' %}
+
+{% block title %}{{ page.title }}{% endblock %}
+
+{% block content %}
+<div class="au-content-page">
+    {% if page.banner_image %}
+    <div class="au-content-banner-image">
+        <img src="{{ page.banner_image.url }}" alt="{{ page.title }}">
+    </div>
+    {% endif %}
+    <div class="au-content-wrap">
+        <h1 class="au-content-page-header">{{ page.title }}</h1>
+        {% if page.subtitle %}
+        <span class="au-content-page-subheader">{{ page.subtitle }}</span>
+        {% endif %}
+        <div class="au-content-block">
+            {{ page.content|safe }}
+        </div>
+    </div>
+</div>
+
+{% endblock %}

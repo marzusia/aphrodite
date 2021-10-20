@@ -1,0 +1,94 @@
+{% load static %}
+{% load cache %}
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>{% block title %}Home{% endblock %} • Aphrodite University</title>
+        <link rel="stylesheet" href="{% static 'assets/main.css' %}" type="text/css">
+    </head>
+    <body>
+        <div class="au-body">
+            {% cache 300 site_section_header %}
+            <div class="au-header">
+                <a href="/" class="au-logo">Aphrodite University</a>
+                <div class="au-menu">
+                    <div class="au-menu-upper">
+                        <ul>
+                            <li><a href="#">For students</a></li>
+                            <li><a href="#">For staff</a></li>
+                            <li><a href="#">Departments</a></li>
+                            <li class="au-menu-upper-search">
+                                <div class="au-menu-upper-search-elem">
+                                    <input type="text" placeholder="Search...">
+                                    <a href="#" aria-label="Search"><img src="{% static 'ui/search.png' %}"></a>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="au-menu-lower">
+                        <ul>
+                            {% for menuItem in menuItems %}
+                            <li>
+                                <a class="arrow">{{ menuItem.label }}</a>
+                                <div class="au-menu-submenu">
+                                    <div class="au-menu-submenu-container">
+                                        {% for menuSection in menuItem.sections.all %}
+                                        <div class="au-menu-submenu-section">
+                                            <h2>{{ menuSection.heading }}</h2>
+                                            <ul>
+                                                {% for item in menuSection.items.all %}
+                                                <li><a href="{{ item.link }}">{{ item.label }}</a></li>
+                                                {% endfor %}
+                                            </ul>
+                                        </div>
+                                        {% endfor %}
+                                    </div>
+                                </div>
+                            </li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            {% endcache %}
+            <div class="au-content">
+                {% block content %}
+                {% endblock %}
+            </div>
+            <div class="au-footer">
+                <div class="au-footer-section">
+                    <h2>Quick Links</h2>
+                    {% cache 300 site_section_quicklinks %}
+                    <ul>
+                        {% for link in quicklinks %}
+                        <li><a href="{{ link.link }}">{{ link.label }}</a></li>
+                        {% endfor %}
+                    </ul>
+                    {% endcache %}
+                </div>
+                <div class="au-footer-section">
+                    <h2>Departments</h2>
+                    {% cache 300 site_section_departments %}
+                    <ul>
+                        {% for department in departments %}
+                        <li><a href="{{ department.link }}">{{ department.full_name }}</a></li>
+                        {% endfor %}
+                    </ul>
+                    {% endcache %}
+                </div>
+                <div class="au-footer-section">
+                    <h2>Contact &amp; Social Media</h2>
+                    <ul>
+                        <li>Twitter: <a href="https://twitter.com/AphroditeUniv">@AphroditeUniv</a></li>
+                        <li>Phone: <a href="tel:+441216673056">(+44) 121 667 3056</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="au-footer-bottom">
+                &copy; 2021 Aphrodite University
+            </div>
+        </div>
+    </body>
+</html>
